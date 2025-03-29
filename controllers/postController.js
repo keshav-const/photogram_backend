@@ -86,16 +86,14 @@ const getAllPost = catchAsync(async (req, res, next) => {
         })
         .populate({
             path: "comments",
-            select: "text user",
             populate: {
                 path: "user",
-                select: "username profilePicture",
+                model: "User",  // ✅ Ensure user is fully populated
+                select: "username profilePicture email",
             },
         })
         .sort({ createdAt: -1 })
-        .select("caption image likes comments createdAt"); // ✅ Explicitly select caption
-
-    //console.log("Posts fetched:", posts); // 👀 Debug log
+        .select("caption image likes comments createdAt");
 
     return res.status(200).json({
         status: "success",
@@ -105,6 +103,7 @@ const getAllPost = catchAsync(async (req, res, next) => {
         },
     });
 });
+
 
 
 // ✅ Get User Posts
