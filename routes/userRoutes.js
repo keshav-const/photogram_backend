@@ -1,7 +1,7 @@
 const express = require('express');
 const { signup, verifyAccount, resendOtp, login, logout, forgetPassword, resetPassword, changePassword } = require('../controllers/authController'); 
 const isAuthenticated  = require("../middleware/isAuthenticated");
-const { getProfile, editProfilee, editProfile, suggestedUser, followUnfollow, getMe } = require('../controllers/userController');
+const { getProfile, editProfile, suggestedUser, followUnfollow, getMe } = require('../controllers/userController');
 const upload = require('../middleware/multer');
 
 const router = express.Router();
