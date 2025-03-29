@@ -64,7 +64,10 @@ app.use("/", express.static("uploads"));
 app.use(cookieParser());
 app.use(helmet());
 app.use(cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000",
+        "https://photogram-frontend-ctxg.vercel.app"
+
+    ],
     credentials: true,
 }));
 
