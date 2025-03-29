@@ -65,7 +65,7 @@ app.use(cookieParser());
 app.use(helmet());
 app.use(cors({
     origin: ["http://localhost:3000",
-        "https://photogram-frontend-ctxg.vercel.app"
+        "https://photogram-frontend-a9kg.vercel.app"
 
     ],
     credentials: true,
